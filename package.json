@@ -1,0 +1,23 @@
+{
+    "name": "runpod-start-stop",
+    "version": "0.1.0",
+    "private": true,
+    "license": "Apache-2.0",
+    "author": "GDP Labs.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/GDP-ADMIN/infra-glair-vision.git"
+    },
+    "scripts": {
+      "start": "npx functions-framework --target=runpodStartStop --signature-type=http"
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    },
+    "dependencies": {
+      "@slack/bolt": "3.5",
+      "axios": "^0.27.2",
+      "fastest-validator": "^1.16.0",
+      "qs": "^6.10.5"
+    }
+  }

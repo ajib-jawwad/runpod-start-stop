@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 const qs = require('qs');
 const axios = require('axios');
-const App = require('@slack/bolt');
+const { App } = require('@slack/bolt');
 
 exports.initSlackClient = () => {
     const app = new App({
@@ -38,7 +38,7 @@ exports.verifySignature = (req) => {
     return crypto.timingSafeEqual(Buffer.from(mySignature, 'utf8'),Buffer.from(slackSignature, 'utf8'));
 }
 
-exports.replyToSlackCommand = (msq, res_type, url) => {
+exports.replyToSlackCommand = (msg, res_type, url) => {
     console.log('sent: ', msg);
     axios.post(url, {
         response_type: res_type == undefined ? "in_channel" : res_type,
